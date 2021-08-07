@@ -1,0 +1,1 @@
+# streamdeck-powerpoint-slidenumber
