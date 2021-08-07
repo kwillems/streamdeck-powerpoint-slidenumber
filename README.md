@@ -7,7 +7,7 @@ Given the various differences, the way this can be accomplished is different for
 Basically, a PowerPoint macro saves the current slide number in a text file. That file is then read by either Keyboard Macro or AutoHotkey and then published to the Stream Deck. 
 On both systems, the Stream Deck will look like this picture. 
 
-![image stream deckpowerpoint slidenumber](https://user-images.githubusercontent.com/2992051/128610860-d135c847-7085-4fdc-9766-f427daf2f761.png)
+<img width="952" alt="image stream deck PowerPoint slide number" src="https://user-images.githubusercontent.com/2992051/128613821-158b3dfb-cd51-46c0-91cc-b19ec6ab15cd.png">
 
 ## Installing the PowerPoint macro
 This is the macro that neds to be executed by PowerPoint. On the **View tab**, choose **Macros**. In the Macro dialog box, type the name for the macro: **storeSlideNumber**. Hit the **+ sign** and copy and paste the following piece of code into the editor window.
