@@ -38,3 +38,10 @@ End Sub
 ```
 
 ## Installation on macOS
+### Keyboard Maestro
+As mentioned, macOS must use the Keyboard Maestro program. So it must be installed on your system. Download the macros nextSlide.kmmacros and previousSlide.kmmacros and double click on each of those files. They are then automatically saved to Keyboard Maestro. All you have to do is tick the checkbox "**Triggered by any of the following:**". 
+
+Note that the action "**Read File to Variable 'slideNumber'**" uses the path as defined in pathFile. See the previous passage about the variable pathFile. 
+
+<img width="1030" alt="Schermafbeelding 2021-08-07 om 22 24 04" src="https://user-images.githubusercontent.com/2992051/128613031-5b544004-62de-4f2c-b003-cc83009fe263.png">
+
