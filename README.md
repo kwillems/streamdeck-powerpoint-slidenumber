@@ -54,3 +54,6 @@ An example profile for the Stream Deck is in the repository. Download that file 
 The buttons 'previous' and 'next' call the Keyboard Maestro macros 'previousSlide' or 'nextSlide' respectively. Those macros make PowerPoint go to the previous or next slide and that slide number is stored in numberSlide.txt. The value stored therein is then read again by Keyboard Maestro and displayed on the correct button on the Stream Deck. 
 
 I'm not a professional programmer, but you may already have noticed that. :-)
+
+## Installation on Windows
+Will follow.
