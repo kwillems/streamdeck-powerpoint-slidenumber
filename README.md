@@ -15,6 +15,8 @@ This is the macro that neds to be executed by PowerPoint. On the **View tab**, c
 This function saves the slide number in a text file called **numberSlide.txt**.
 Note that the pathFile variable contains a different path for this file, depending on the operating system. On macOS, I personally prefer to store numberSlide.txt in **/usr/local/bin/**. However, I can imagine someone would prefer to store that file in their Documents folder. Then the path on macOS becomes **/Users/username/Documents/numberSlide.txt**. It goes without saying that the pathFile variable in the function below should be modified accordingly. That also applies to Windows. In the function below is, the variable pathFile is defined twice. It makes swapping between macOS and Windows easier (to me). If running under Windows one should uncomment the Windows line and comment the macOS line.
 
+Finally, the Powerpoint presentations that use this macro must of course be saved as a PPTM file. When opening the presentation, macros must be enabled. 
+
 For the numberSlide.txt file, use an empty text file. An example of such a file is in the repository. It must be saved to the pathFile location.
 
 ```VBScript
