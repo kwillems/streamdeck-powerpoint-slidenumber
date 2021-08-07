@@ -1,0 +1,15 @@
+Sub storeSlideNumber()
+    Dim slideNumber
+    Dim pathFile As String
+    
+    'Windows
+    'pathFile = "C:\Users\gebruiker\Documents\OBS\PowerPoint\numberSlide.txt"
+    
+    'macOS
+    pathFile = "/usr/local/bin/numberSlide.txt"
+    
+    slideNumber = ActivePresentation.SlideShowWindow.View.Slide.SlideIndex
+    Open pathFile For Output As #1
+    Print #1, slideNumber
+    Close #1
+End Sub
