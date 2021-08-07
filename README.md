@@ -43,5 +43,14 @@ As mentioned, macOS must use the Keyboard Maestro program. So it must be install
 
 Note that the action "**Read File to Variable 'slideNumber'**" uses the path as defined in pathFile. See the previous passage about the variable pathFile. 
 
-<img width="1030" alt="Schermafbeelding 2021-08-07 om 22 24 04" src="https://user-images.githubusercontent.com/2992051/128613031-5b544004-62de-4f2c-b003-cc83009fe263.png">
+At **button ID** you see that it says "**R2C8**", meaning row 2 and cell 8. So the number indicator is on the Stream Deck in the second row on the eighth button. Keep this in mind and change this if you want to move this button to a different location on your Stream Deck. 
 
+<img width="1030" alt="screenshot Keyboard Maestro" src="https://user-images.githubusercontent.com/2992051/128613031-5b544004-62de-4f2c-b003-cc83009fe263.png">
+
+### Stream Deck
+An example profile for the Stream Deck is in the repository. Download that file and double click it. You also need to add two plugins to the Stream Deck app. It concerns the plugin "**Keyboard Maestro**" and the plugin "**KMLink**". You can find both in the Stream Deck Store. 
+
+### So how does this all work in macOS?
+The buttons 'previous' and 'next' call the Keyboard Maestro macros 'previousSlide' or 'nextSlide' respectively. Those macros make PowerPoint go to the previous or next slide and that slide number is stored in numberSlide.txt. The value stored therein is then read again by Keyboard Maestro and displayed on the correct button on the Stream Deck. 
+
+I'm not a professional programmer, but you may already have noticed that. :-)
