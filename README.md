@@ -9,4 +9,28 @@ On both systems, the Stream Deck will look like this picture.
 
 ![image stream deckpowerpoint slidenumber](https://user-images.githubusercontent.com/2992051/128610860-d135c847-7085-4fdc-9766-f427daf2f761.png)
 
+## Installing the PowerPoint macro
+This is the macro that neds to be executed by PowerPoint. On the **View tab**, choose **Macros**. In the Macro dialog box, type the name for the macro: **storeSlideNumber**. Hit the **+ sign** and copy and paste the following piece of code into the editor window.
+
+This function saves the slide number in a text file called **numberSlide.txt**.
+Note that the pathFile variable contains a different path for this file, depending on the operating system. On macOS, I personally prefer to store numberSlide.txt in **/usr/local/bin/** However, I can imagine someone would prefer to store that file in their Documents folder. Then the path on macOS becomes **/Users/username/Documents/numberSlide.txt**. It goes without saying that the pathFile variable in the function below should be modified accordingly. That also applies to Windows. In the function below is, the variable pathFile is defined twice. It makes swapping between macOS and Windows easier (to me). If running under Windows one should uncomment the Windows line and comment the macOS line.
+
+```VBScript
+Sub storeSlideNumber()
+    Dim slideNumber
+    Dim pathFile As String
+    
+    'Windows
+    'pathFile = "C:\Users\gebruiker\Documents\OBS\PowerPoint\numberSlide.txt"
+    
+    'macOS
+    pathFile = "/usr/local/bin/numberSlide.txt"
+    
+    slideNumber = ActivePresentation.SlideShowWindow.View.Slide.SlideIndex
+    Open pathFile For Output As #1
+    Print #1, slideNumber
+    Close #1
+End Sub
+```
+
 ## Installation on macOS
