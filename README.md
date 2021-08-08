@@ -4,18 +4,18 @@ There are several ways to control PowerPoint with a Stream Deck. But so far, no 
 
 Given the various differences, the way this can be accomplished is different for macOS and Windows. Therefore, different scripts are included for each of those systems. When using macOS, Keyboard Maestro is required, https://www.keyboardmaestro.com. On Windows we have to use AutoHotkey, https://www.autohotkey.com.
 
-Basically, a PowerPoint macro saves the current slide number in a text file. That file is then read by either Keyboard Macro or AutoHotkey and then published to the Stream Deck. 
+Basically, a PowerPoint macro saves the current slide number into a text file. That file is then read by either Keyboard Macro or AutoHotkey and then published to the Stream Deck. 
 On both systems, the Stream Deck will look like this picture. 
 
 <img width="952" alt="image stream deck PowerPoint slide number" src="https://user-images.githubusercontent.com/2992051/128613821-158b3dfb-cd51-46c0-91cc-b19ec6ab15cd.png">
 
 ## Installing the PowerPoint macro
-This is the macro that neds to be executed by PowerPoint. On the **View tab**, choose **Macros**. In the Macro dialog box, type the name for the macro: **storeSlideNumber**. Hit the **+ sign** and copy and paste the following piece of code into the editor window.
+This is the macro that needs to be executed by PowerPoint. On the **View tab**, choose **Macros**. In the Macro dialog box, type the name for the macro: **storeSlideNumber**. Hit the **+ sign** and copy and paste the following piece of code into the editor window.
 
 This function saves the slide number in a text file called **numberSlide.txt**.
-Note that the pathFile variable contains a different path for this file, depending on the operating system. On macOS, I personally prefer to store numberSlide.txt in **/usr/local/bin/**. However, I can imagine someone would prefer to store that file in their Documents folder. Then the path on macOS becomes **/Users/username/Documents/numberSlide.txt**. It goes without saying that the pathFile variable in the function below should be modified accordingly. That also applies to Windows. In the function below is, the variable pathFile is defined twice. It makes swapping between macOS and Windows easier (to me). If running under Windows one should uncomment the Windows line and comment the macOS line.
+Note that the pathFile variable contains a different path for this file, depending on the operating system. On macOS, I personally prefer to store numberSlide.txt in **/usr/local/bin/**. However, I can imagine someone would prefer to store that file in the Documents folder. Then the path on macOS becomes something like **/Users/username/Documents/numberSlide.txt**. It goes without saying that the pathFile variable in the function below should be modified accordingly. That also applies to Windows. In the function below the variable pathFile is defined twice. It makes swapping between macOS and Windows easier (to me). If running under Windows one should uncomment the Windows line and comment the macOS line.
 
-Finally, the Powerpoint presentations that use this macro must of course be saved as a PPTM file. When opening the presentation, macros must be enabled. 
+Finally, the Powerpoint presentations that use this macro must of course be saved as PPTM files. When opening the presentation, macros must be enabled. 
 
 For the numberSlide.txt file, use an empty text file. An example of such a file is in the repository. It must be saved to the pathFile location.
 
@@ -39,7 +39,7 @@ End Sub
 
 ## Installation on macOS
 ### Keyboard Maestro
-As mentioned, macOS must use the Keyboard Maestro program. So it must be installed on your system. Download the macros nextSlide.kmmacros and previousSlide.kmmacros and double click on each of those files. They are then automatically saved to Keyboard Maestro. All you have to do is tick the checkbox "**Triggered by any of the following:**". 
+As mentioned, macOS must use the Keyboard Maestro program. So it must be installed on your system. Download the macros nextSlide.kmmacros and previousSlide.kmmacros and double click on each of those files. They are then automatically stored in Keyboard Maestro. All you have to do is tick the checkbox "**Triggered by any of the following:**". 
 
 Note that the action "**Read File to Variable 'slideNumber'**" uses the path as defined in pathFile. See the previous passage about the variable pathFile. 
 
